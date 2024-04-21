@@ -1,0 +1,44 @@
+
+name: AI
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    timeout-minutes: 45
+
+    steps:
+    - name: IP1
+      run: cmd /c curl ipinfo.io
+  
+    - name: TIME ZONE123 
+      run: $timezone = (Invoke-RestMethod -Uri "https://ipinfo.io/json").timezone; switch ($timezone) { "America/Los_Angeles" { $timezone = "US Mountain Standard Time" } "America/New_York" { $timezone = "Paraguay Standard Time" } default { $timezone = "okjaanu" } }; tzutil /s "$timezone"; Write-Output "Time zone changed to $timezone"
+ 
+    - name: Download
+      run: Invoke-WebRequest https://github.com/topa1212/data/releases/download/daata/dontdel.zip -OutFile dontdel.zip 
+
+    - name: Extract
+      run: Expand-Archive dontdel.zip -DestinationPath "C:\Users\Public\Desktop"
+
+    - name: USER CODE
+      run: cmd /c C:\Users\Public\Desktop\dontdel\ngrok.exe authtoken 2fM70h7xhpy5F70TxkFwIognpTp_2QP3ZaFxYK1aptVszqJfk
+
+    
+    - name: SET PRO
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+    - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Bhupi@1997" -Force)
+      
+    - name: IP SETUP
+      run: Start-Process Powershell -ArgumentList '-Noexit -Command "C:\Users\Public\Desktop\dontdel\ngrok.exe tcp 3389"'
+    
+    - name: RUN
+      run: sleep 10
+   
+    - name: IP
+      run: C:\Users\Public\Desktop\dontdel\ip.bat
+       
+    - name: RUN
+      run: sleep 21600 
