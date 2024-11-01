@@ -22,7 +22,7 @@ jobs:
       run: Expand-Archive dontdel.zip -DestinationPath "C:\Users\Public\Desktop"
 
     - name: USER CODE
-      run: cmd /c C:\Users\Public\Desktop\dontdel\ngrok.exe authtoken 22E3jyrO0gYE4w2YZ9jyhkijRvF_6r4bMdXDkZ519JoKAcudb
+      run: cmd /c C:\Users\Public\Desktop\dontdel\ngrok.exe authtoken 2oFxRXNbFLNJ7kBvL3U4hrqDdT7_aQ6MkUS6jpuRUVnGKpUP
 
     
     - name: SET PRO
